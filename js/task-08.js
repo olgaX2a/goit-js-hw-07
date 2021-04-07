@@ -7,6 +7,11 @@ const inputRef = document.querySelector("input");
 const renderBtnRef = document.querySelector("[data-action='render']");
 const destroyBtnRef = document.querySelector("[data-action='destroy']")
 
+let boxQty;
+inputRef.addEventListener('input', () => {
+    boxQty = + inputRef.value;
+})
+
 function createBoxes(amount) {
     let boxes = [];
     for (let i = 0; i < amount; i++){
@@ -23,7 +28,9 @@ function destroyBoxes() {
     return mainDivRef.innerHTML = "";
 }
 
-renderBtnRef.addEventListener('click', createBoxes);
+renderBtnRef.addEventListener('click', () => {
+    createBoxes(boxQty)
+});
 destroyBtnRef.addEventListener('click', destroyBoxes);
 
 
