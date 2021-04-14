@@ -18,9 +18,6 @@ const images = [
 
 const galleryRef = document.getElementById("gallery")
 const galleryItems = images.map(image => {
-  const liItem = document.createElement("li");
-  liItem.classList.add("gallery__item")
-  liItem.insertAdjacentHTML("beforeend", `<img src=${image.url} alt="${image.alt}"/>`);
-  return liItem
+  return `<li class="gallery__item"><img src=${image.url} alt="${image.alt}"/></li>`
 })
-galleryRef.append(...galleryItems)
+galleryRef.insertAdjacentHTML("beforeend", galleryItems.join(""))

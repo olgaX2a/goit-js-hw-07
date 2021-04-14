@@ -13,6 +13,7 @@ inputRef.addEventListener('input', () => {
 })
 
 function createBoxes(amount) {
+    mainDivRef.innerHTML = "";
     let boxes = [];
     for (let i = 0; i < amount; i++){
         const box = document.createElement('div');
@@ -25,6 +26,7 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
+    inputRef.value = "";
     return mainDivRef.innerHTML = "";
 }
 
